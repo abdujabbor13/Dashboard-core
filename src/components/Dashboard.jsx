@@ -8,7 +8,7 @@ import LayersIcon from "@mui/icons-material/Layers";
 import { AppProvider } from "@toolpad/core/AppProvider";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import { PageContainer } from "@toolpad/core/PageContainer";
-import Grid from "@mui/material/Grid2";
+import Card from "./Card";
 
 // **NAVIGATION MENU**
 const NAVIGATION = [
@@ -67,7 +67,11 @@ const Skeleton = styled("div")(({ theme, height }) => ({
 
 // **DASHBOARD COMPONENT**
 export default function Dashboard() {
-  return <DashboardLayoutBasic />;
+  return (
+    <>
+      <DashboardLayoutBasic />
+    </>
+  );
 }
 
 // **DASHBOARD LAYOUT**
@@ -83,40 +87,19 @@ function DashboardLayoutBasic(props) {
       window={window}
     >
       <DashboardLayout>
-        <PageContainer>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <Skeleton height={14} />
-            </Grid>
-            <Grid item xs={12}>
-              <Skeleton height={14} />
-            </Grid>
-            <Grid item xs={4}>
-              <Skeleton height={100} />
-            </Grid>
-            <Grid item xs={8}>
-              <Skeleton height={100} />
-            </Grid>
-            <Grid item xs={12}>
-              <Skeleton height={150} />
-            </Grid>
-            <Grid item xs={12}>
-              <Skeleton height={14} />
-            </Grid>
-            <Grid item xs={3}>
-              <Skeleton height={100} />
-            </Grid>
-            <Grid item xs={3}>
-              <Skeleton height={100} />
-            </Grid>
-            <Grid item xs={3}>
-              <Skeleton height={100} />
-            </Grid>
-            <Grid item xs={3}>
-              <Skeleton height={100} />
-            </Grid>
-          </Grid>
-        </PageContainer>
+        <div className="container">
+          <h2
+            style={{
+              marginTop: "20px",
+              fontSize: "40px",
+              fontWeight: "600",
+              marginBottom: "24px",
+            }}
+          >
+            Products dashboard
+          </h2>
+          <Card />
+        </div>
       </DashboardLayout>
     </AppProvider>
   );
